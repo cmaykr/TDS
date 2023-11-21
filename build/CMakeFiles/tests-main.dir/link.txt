@@ -1,1 +1,0 @@
-/usr/bin/c++ "CMakeFiles/tests-main.dir/Tests/vector2_test.cpp.o" "CMakeFiles/tests-main.dir/Tests/test_main.cpp.o" -o /home/david/Documents/Projects/TDS/bin/tests-main  /usr/local/lib/libCatch2.a 

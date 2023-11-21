@@ -1,5 +1,0 @@
-/home/david/Documents/Projects/TDS/build/CMakeFiles/TDS_main.dir
-/home/david/Documents/Projects/TDS/build/CMakeFiles/TDS.dir
-/home/david/Documents/Projects/TDS/build/CMakeFiles/tests-main.dir
-/home/david/Documents/Projects/TDS/build/CMakeFiles/edit_cache.dir
-/home/david/Documents/Projects/TDS/build/CMakeFiles/rebuild_cache.dir
