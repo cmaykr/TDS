@@ -1,4 +1,4 @@
-#include "include/vector2.h"
+#include "vector2.hpp"
 
 template <typename T>
 Vector2<T>::Vector2(T x, T y)
@@ -11,43 +11,51 @@ Vector2<T>::Vector2(Vector2<T> const& n)
 {}
 
 template <typename T>
-void Vector2<T>::operator=(Vector2 rhs)
+Vector2<T>& Vector2<T>::operator=(Vector2 const& rhs)
 {
-    /// Implement
+    if (this == &rhs)
+        return *this;
+
+    x = rhs.x;
+    y = rhs.y;
+
+    return *this;
 }
 
 template <typename T>
-Vector2<T> Vector2<T>::operator-(Vector2 rhs)
+Vector2<T> &Vector2<T>::operator-=(Vector2 const &rhs)
 {
-    Vector2<T> n{*this};
+    x -= rhs.x;
+    y -= rhs.y;
 
-    n.x -= rhs.x,
-    n.y -= rhs.y;
-
-    return n;
+    return *this;
 }
 
 template <typename T>
-Vector2<T> Vector2<T>::operator+(Vector2 rhs)
+Vector2<T> Vector2<T>::operator-(Vector2 const &rhs)
 {
-    Vector2<T> n{*this};
-
-    n.x += rhs.x;
-    n.y += rhs.y;
-
-    return n;
+    return *this -= rhs;
 }
 
 template <typename T>
-Vector2<T> Vector2<T>::operator*(Vector2 rhs)
+Vector2<T> &Vector2<T>::operator+=(Vector2 const &rhs)
 {
-    // Implement
+    x += rhs.x;
+    y += rhs.y;
+
+    return *this;
 }
 
 template <typename T>
-std::ostream& operator<<(std::ostream & os, Vector2<T> const& obj)
+Vector2<T> Vector2<T>::operator+(Vector2 const &rhs)
 {
-    os << "{ " << obj.x << ", " << obj.y " }";
+    return *this += rhs;
+}
+
+template <typename T>
+std::ostream &operator<<(std::ostream &os, Vector2<T> const &obj)
+{
+    os << "{ " << obj.x << ", " << obj.y << " }";
 
     return os;
 }

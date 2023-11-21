@@ -12,10 +12,12 @@ public:
     Vector2(T x, T y);
     Vector2(Vector2<T> const& n);
 
-    void operator=(Vector2 rhs);
-    Vector2<T> operator-(Vector2 rhs);
-    Vector2<T> operator+(Vector2 rhs);
-    Vector2<T> operator*(Vector2 rhs);
+    Vector2<T>& operator=(Vector2 const& rhs);
+    Vector2<T>& operator-=(Vector2 const& rhs);
+    Vector2<T> operator-(Vector2 const& rhs);
+
+    Vector2<T>& operator+=(Vector2 const& rhs);
+    Vector2<T> operator+(Vector2 const& rhs);
 
 
     T x;

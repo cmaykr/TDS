@@ -1,6 +1,6 @@
 # Paths
 SRCDIR := src
-IDIR := include
+IDIR := include 
 OBJDIR := obj
 BINDIR := bin
 
