@@ -11,34 +11,19 @@ Vector2<T>::Vector2(Vector2<T> const& n)
 {}
 
 template <typename T>
-Vector2<T>& Vector2<T>::operator=(Vector2 const& rhs)
+bool Vector2<T>::operator==(Vector2<T> const &rhs)
 {
-    if (this == &rhs)
-        return *this;
-
-    x = rhs.x;
-    y = rhs.y;
-
-    return *this;
+    return x == rhs.x && y == rhs.y;
 }
 
 template <typename T>
-Vector2<T> &Vector2<T>::operator-=(Vector2 const &rhs)
+bool Vector2<T>::operator==(Vector2<T> const &rhs) const
 {
-    x -= rhs.x;
-    y -= rhs.y;
-
-    return *this;
+    return *this == rhs;
 }
 
 template <typename T>
-Vector2<T> Vector2<T>::operator-(Vector2 const &rhs)
-{
-    return *this -= rhs;
-}
-
-template <typename T>
-Vector2<T> &Vector2<T>::operator+=(Vector2 const &rhs)
+Vector2<T>& Vector2<T>::operator+=(Vector2<T> const& rhs)
 {
     x += rhs.x;
     y += rhs.y;
@@ -47,9 +32,9 @@ Vector2<T> &Vector2<T>::operator+=(Vector2 const &rhs)
 }
 
 template <typename T>
-Vector2<T> Vector2<T>::operator+(Vector2 const &rhs)
+Vector2<T> Vector2<T>::operator+(Vector2<T> const &rhs)
 {
-    return *this += rhs;
+    return *this;
 }
 
 template <typename T>
