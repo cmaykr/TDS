@@ -4,6 +4,6 @@
 
 TEST_CASE("Basic Vector2 functions")
 {
-    Vector2<int> a{2,3};
+    Vector2<int> a{};
     
 }
