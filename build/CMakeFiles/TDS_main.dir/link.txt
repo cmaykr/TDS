@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTDS_main.a CMakeFiles/TDS_main.dir/src/main.cpp.o CMakeFiles/TDS_main.dir/src/game.cpp.o CMakeFiles/TDS_main.dir/src/vector2.cpp.o
+/usr/bin/ranlib libTDS_main.a
