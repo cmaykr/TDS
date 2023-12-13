@@ -8,10 +8,5 @@ int main()
 
     game.run();
 
-    std::cout << "Test" << std::endl;
-
-    Vector2<int> a{};
-    Vector2<int> b{};
-
     return 0;
 }
