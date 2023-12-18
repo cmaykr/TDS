@@ -1,5 +1,5 @@
 #include "game.hpp"
-#include "renderer.hpp"
+#include "screen.hpp"
 
 #include <SDL2/SDL.h>
 
@@ -8,8 +8,8 @@ void Game::run()
     // Temporary
     // For testing
 
-    Renderer rend;
-    rend.createRenderer("Test", 600, 600);
+    Screen rend;
+    rend.createScreen("Test", 600, 600);
 
     SDL_SetRenderDrawColor(rend.renderer(), 100, 200, 255, 255);
 
