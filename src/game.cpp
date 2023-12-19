@@ -12,7 +12,6 @@ void Game::run()
     rend.createScreen("Test", 600, 600);
 
     SDL_SetRenderDrawColor(rend.renderer(), 100, 200, 255, 255);
-
     SDL_Event event;
     while (true)
     {

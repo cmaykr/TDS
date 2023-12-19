@@ -15,4 +15,6 @@ public:
 private:
     SDL_Renderer * _renderer{};
     SDL_Window *window{};
+
+    
 };
