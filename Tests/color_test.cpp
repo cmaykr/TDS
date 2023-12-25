@@ -31,7 +31,7 @@ TEST_CASE("Test normal values")
 
 TEST_CASE("Test invalid values")
 {
-    SECTION ("Overflow constructor Test")
+    SECTION ("Overflow Test")
     {
         Color a{500, 256, 100000, 300};
         REQUIRE(a.red() == 255);
@@ -39,7 +39,37 @@ TEST_CASE("Test invalid values")
         REQUIRE(a.blue() == 255);
         REQUIRE(a.alpha() == 255);
 
+        a.setColor(501, 257, 10000, 340);
+        REQUIRE(a.red() == 255);
+        REQUIRE(a.green() == 255);
+        REQUIRE(a.blue() == 255);
+        REQUIRE(a.alpha() == 255);
+
     }
+    SECTION ("Underflow Test")
+    {
+        Color a{-100, -200, -100000, -300};
+        REQUIRE(a.red() == 0);
+        REQUIRE(a.green() == 0);
+        REQUIRE(a.blue() == 0);
+        REQUIRE(a.alpha() == 0);
+
+        a.setColor(-501, -257, -10000, -340);
+        REQUIRE(a.red() == 0);
+        REQUIRE(a.green() == 0);
+        REQUIRE(a.blue() == 0);
+        REQUIRE(a.alpha() == 0);
+    }
+}
+
+TEST_CASE("Test get functions")
+{
+    Color a{200, 150, 255, 0};
+
+    REQUIRE(a.red() == 200);
+    REQUIRE(a.green() == 150);
+    REQUIRE(a.blue() == 255);
+    REQUIRE(a.alpha() == 0); 
 }
 
 
