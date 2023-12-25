@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <iostream>
 
 void Game::run()
 {
@@ -13,20 +14,22 @@ void Game::run()
     SDL_Texture *text{};
 
     Screen rend;
-    rend.createScreen("Test", 600, 600);
+    rend.createScreen("Test", 800, 800);
 
-    text = IMG_LoadTexture(rend.renderer(), "Textures/rubber-duck.png");
+    SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO, "Loading %s", "Textures/rubber-duck.png");
+    text = IMG_LoadTexture(rend.renderer(), "/home/david/Documents/Projects/TDS/Textures/rubber-duck.png");
     SDL_Rect dest;
-    dest.x = 100;
-    dest.y = 100;
-    SDL_QueryTexture(text, NULL, NULL, &dest.w, &dest.y);
+    dest.x = 10;
+    dest.y = 10;
+    SDL_QueryTexture(text, NULL, NULL, &dest.w, &dest.h);
 
     SDL_Event event;
     while (true)
     {
-        SDL_RenderCopy(rend.renderer(), text, NULL, &dest);
-        SDL_SetRenderDrawColor(rend.renderer(), 100, 200, 255, 255);
         SDL_RenderClear(rend.renderer());
+        SDL_RenderCopy(rend.renderer(), text, NULL, &dest);
+
+        SDL_SetRenderDrawColor(rend.renderer(), 255, 200, 255, 255);
         while (SDL_PollEvent(&event))
         {
 
