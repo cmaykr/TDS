@@ -4,7 +4,9 @@
 #include <string>
 
 #include "color.hpp"
+#include "texture.hpp"
 
+/// Owns all variables and functions for creating and manipulating a screen.
 class Screen
 {
 public:
@@ -14,8 +16,7 @@ public:
 
     SDL_Renderer* renderer() const;
 
-    // Updates screen with any rendering done after last call. 
-    void renderScreen();
+    void renderTexture(Texture const& text);
 
 private:
     SDL_Renderer * _renderer{};

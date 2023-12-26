@@ -10,6 +10,11 @@ void Screen::createScreen(std::string const& title, int width, int height)
     _renderer = SDL_CreateRenderer(window, -1, 0);
 }
 
+void Screen::renderTexture(Texture const& text)
+{
+
+}
+
 SDL_Renderer* Screen::renderer() const
 {
     return _renderer;
