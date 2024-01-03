@@ -27,9 +27,9 @@ void Game::run()
     while (true)
     {
         SDL_RenderClear(rend.renderer());
+        SDL_SetRenderDrawColor(rend.renderer(), 255, 200, 255, 255);
         SDL_RenderCopy(rend.renderer(), text, NULL, &dest);
 
-        SDL_SetRenderDrawColor(rend.renderer(), 255, 200, 255, 255);
         while (SDL_PollEvent(&event))
         {
 
