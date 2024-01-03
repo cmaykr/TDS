@@ -20,12 +20,12 @@ public:
     /// @param filename Name of the texture + fileending. Path not needed
     void deleteTexture(std::string const& filename); 
 
-    // Get data about specific texture. Shouldn't be able to change the data.
+    // Fetches data about specific texture. Loads texture if not already available.
     /// @param filename Name of the texture + fileending. Path not needed
-    Texture const& getTexture(std::string const& filename) const;
+    Texture fetchTexture(std::string const& filename);
 private:
     /// Base path for all resource files.
-    std::string filepath;
+    std::string basePath;
 
     std::map<std::string, Texture> textures{};
 };
