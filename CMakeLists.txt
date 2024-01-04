@@ -13,7 +13,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 include_directories(${SDL2_INCLUDE_DIRS})
 
 include_directories(include)
-add_executable(TDS src/main.cpp src/game.cpp src/screen.cpp src/color.cpp src/resourceManager.cpp src/sprite.cpp)
+add_executable(TDS src/main.cpp src/game.cpp src/screen.cpp src/color.cpp src/renderer.cpp src/sprite.cpp)
 target_link_libraries(TDS SDL2::Main SDL2::Image)
 
 add_library(Tests_src STATIC src/main.cpp src/game.cpp)
